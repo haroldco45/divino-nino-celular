@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Celular en el Divino Niño</title>
+<meta name="description" content="Circular Rectoral N.º 06 de 2026 — Regulación del uso de teléfonos celulares y dispositivos electrónicos en la Institución Educativa Divino Niño, Caucasia, Antioquia.">
+<meta name="theme-color" content="#0c2d7a">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#0c2d7a; --azul2:#1747b8; --amarillo:#ffd23f; --rojo:#e5384b; --verde:#3fae49;
+  --celeste:#2f8fe0; --morado:#6c3fc4; --naranja:#f26b1d; --rosa:#e6457a; --teal:#159f8e;
+  --bg:#f4f6fc; --card:#ffffff; --tx:#18203a; --tx2:#4a5373; --line:#e3e7f3;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Nunito,system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.5;overflow-x:hidden}
+h1,h2,h3,.baloo{font-family:"Baloo 2",Nunito,sans-serif;line-height:1.1}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+
+/* Barra superior */
+.top{position:sticky;top:0;z-index:50;background:rgba(12,45,122,.92);backdrop-filter:blur(8px);color:#fff}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;height:56px}
+.brand{font-family:"Baloo 2";font-weight:800;font-size:1.05rem;letter-spacing:.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand small{display:block;font-family:Nunito;font-weight:600;font-size:.7rem;opacity:.8;margin-top:-4px}
+.btns{display:flex;gap:6px;flex-shrink:0}
+.btn{border:0;cursor:pointer;font:800 .8rem Nunito;padding:8px 12px;border-radius:999px;background:#fff;color:var(--azul);transition:transform .2s}
+.btn:active{transform:scale(.95)}
+.btn.alt{background:var(--amarillo)}
+#progress{position:absolute;left:0;bottom:0;height:3px;background:var(--amarillo);width:0}
+
+/* Hero */
+.hero{position:relative;color:#fff;overflow:hidden;padding:46px 0 70px;
+  background:linear-gradient(120deg,#0c2d7a,#1747b8,#6c3fc4,#e6457a,#0c2d7a);background-size:400% 400%;animation:mover 18s ease infinite}
+@keyframes mover{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(40px);opacity:.35}
+.hero:before{width:320px;height:320px;background:var(--amarillo);top:-120px;right:-80px;animation:flotar 9s ease-in-out infinite}
+.hero:after{width:260px;height:260px;background:#3fd0ff;bottom:-120px;left:-60px;animation:flotar 11s ease-in-out infinite reverse}
+@keyframes flotar{50%{transform:translateY(30px)}}
+.hero .wrap{position:relative;z-index:2}
+.inst{font-weight:800;letter-spacing:2px;font-size:.85rem;opacity:.9}
+.hero h1{font-size:clamp(2.4rem,8vw,4.4rem);font-weight:800;margin:4px 0 6px;text-shadow:0 4px 0 rgba(0,0,0,.15)}
+.lugar{display:inline-block;background:var(--amarillo);color:var(--azul);font-weight:800;padding:4px 16px;border-radius:999px}
+.reso{font-size:.85rem;opacity:.85;margin-top:8px}
+.lema{margin-top:10px;font-weight:700;letter-spacing:1px;font-size:.8rem;opacity:.85}
+.circ{margin-top:24px;display:inline-flex;flex-wrap:wrap;gap:10px;align-items:center;background:rgba(255,255,255,.14);border:2px dashed rgba(255,255,255,.55);border-radius:18px;padding:12px 18px}
+.circ b{font-family:"Baloo 2";font-size:1.25rem}
+.circ span{background:#fff;color:var(--rosa);border-radius:999px;padding:2px 12px;font-weight:800}
+.titulo{margin-top:26px;background:var(--azul);border-radius:22px;padding:20px;box-shadow:0 14px 40px rgba(0,0,0,.25)}
+.titulo h2{font-size:clamp(1.35rem,4.6vw,2.2rem);text-transform:uppercase}
+.titulo h2 em{font-style:normal;color:var(--amarillo);display:block}
+.titulo p{margin-top:10px;background:#cfe6ff;color:var(--azul);border-radius:999px;padding:6px 14px;font-weight:800;font-size:.92rem;display:inline-block}
+.estado{margin-top:18px;display:flex;align-items:center;gap:10px;font-weight:700}
+.pulso{width:12px;height:12px;border-radius:50%;background:#6dff8a;box-shadow:0 0 0 0 rgba(109,255,138,.8);animation:pulso 1.8s infinite;flex-shrink:0}
+@keyframes pulso{70%{box-shadow:0 0 0 14px rgba(109,255,138,0)}100%{box-shadow:0 0 0 0 rgba(109,255,138,0)}}
+
+/* Navegación por números */
+.nums{display:flex;gap:8px;overflow-x:auto;padding:16px 0 6px;scrollbar-width:none}
+.nums::-webkit-scrollbar{display:none}
+.nums a{flex-shrink:0;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:#fff;font:800 1.1rem "Baloo 2";transition:transform .2s}
+.nums a:hover{transform:translateY(-3px) scale(1.08)}
+
+/* Secciones */
+section.blk{margin:26px 0;background:var(--card);border-radius:24px;overflow:hidden;box-shadow:0 6px 24px rgba(20,40,100,.08);
+  opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+section.blk.ver{opacity:1;transform:none}
+.cab{display:flex;align-items:center;gap:14px;padding:14px 18px;color:#fff}
+.n{width:52px;height:52px;flex-shrink:0;border-radius:50%;background:#fff;display:grid;place-items:center;font:800 1.7rem "Baloo 2"}
+.cab h3{font-size:clamp(1.25rem,4vw,1.7rem);text-transform:uppercase}
+.cuerpo{padding:18px 20px 22px}
+.lista{list-style:none;display:grid;gap:10px}
+.lista li{position:relative;padding:12px 14px 12px 18px;border-radius:14px;background:var(--soft);border-left:5px solid var(--c);font-weight:600}
+.lista li b{font-weight:800}
+.dos{display:grid;gap:16px}
+@media(min-width:760px){.dos{grid-template-columns:1fr 1fr}}
+.panel{border-radius:18px;padding:18px;background:var(--soft)}
+.panel h4{font-family:"Baloo 2";font-size:1.25rem;color:var(--c);margin-bottom:8px;text-transform:uppercase}
+.nota{margin-top:12px;border:2px solid var(--c);border-radius:14px;padding:10px 14px;font-weight:700;background:#fff}
+.si{margin-top:10px;padding:12px 14px;border-radius:14px;background:#e7f7e9;border-left:5px solid var(--verde);font-weight:600}
+.grande{font-size:1.15rem;font-weight:700}
+.sedes{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sedes span{background:var(--c);color:#fff;border-radius:999px;padding:6px 16px;font-weight:800}
+
+/* Interactivos */
+.tool{margin-top:18px;border-radius:18px;padding:18px;background:linear-gradient(135deg,var(--azul),var(--azul2));color:#fff}
+.tool h4{font-family:"Baloo 2";font-size:1.2rem;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:2px solid rgba(255,255,255,.6);background:transparent;color:#fff;font:800 .9rem Nunito;padding:8px 14px;border-radius:999px;cursor:pointer;transition:all .2s}
+.chip.on,.chip:hover{background:var(--amarillo);border-color:var(--amarillo);color:var(--azul)}
+.resp{margin-top:14px;background:#fff;color:var(--tx);border-radius:14px;padding:14px 16px;font-weight:600;min-height:52px;animation:aparecer .4s}
+@keyframes aparecer{from{opacity:0;transform:translateY(8px)}}
+.ruta{display:grid;gap:12px;margin-top:4px}
+@media(min-width:760px){.ruta{grid-template-columns:repeat(3,1fr)}}
+.paso{border-radius:18px;padding:16px;color:#fff;position:relative;overflow:hidden}
+.paso .k{font:800 .8rem Nunito;letter-spacing:1.5px;text-transform:uppercase;opacity:.9}
+.paso h4{font-family:"Baloo 2";font-size:1.3rem;margin:2px 0 8px;text-transform:uppercase}
+.paso ul{padding-left:18px}
+.paso li{margin:4px 0}
+.paso .bg{position:absolute;right:-6px;bottom:-30px;font:800 7rem "Baloo 2";opacity:.15;line-height:1}
+.check{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:var(--soft);cursor:pointer;font-weight:600;transition:background .2s}
+.check input{width:22px;height:22px;accent-color:var(--c);flex-shrink:0;margin-top:2px}
+.check.ok{background:#e7f7e9;text-decoration:line-through;text-decoration-color:rgba(0,0,0,.25)}
+.barra{height:12px;border-radius:999px;background:var(--line);overflow:hidden;margin:12px 0 4px}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--amarillo),var(--naranja));transition:width .5s}
+.leyes{counter-reset:l}
+.leyes li{counter-increment:l}
+.leyes li:before{content:counter(l);position:absolute;left:-14px;top:10px;width:26px;height:26px;border-radius:50%;background:var(--c);color:#fff;font:800 .85rem "Baloo 2";display:grid;place-items:center}
+.leyes{padding-left:14px}
+.foto{margin-top:6px}
+.foto img{width:100%;border-radius:18px;display:block;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.pie{background:var(--azul);color:#fff;padding:30px 0 40px;margin-top:30px;text-align:center}
+.pie p{opacity:.85;font-size:.88rem;margin-top:6px}
+.compartir{display:inline-block;margin-top:16px;background:var(--verde);color:#fff;text-decoration:none;font-weight:800;padding:12px 22px;border-radius:999px}
+.marquee{overflow:hidden;white-space:nowrap;background:var(--amarillo);color:var(--azul);font-weight:800;padding:8px 0}
+.marquee div{display:inline-block;padding-left:100%;animation:correr 28s linear infinite}
+@keyframes correr{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}section.blk{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">I. E. Divino Niño<small id="tCirc">Circular Rectoral N.º 06 de 2026</small></div>
+    <div class="btns">
+      <button class="btn alt" id="lang" aria-label="Cambiar idioma">EN</button>
+      <button class="btn" id="install" hidden>Instalar</button>
+    </div>
+  </div>
+  <div id="progress"></div>
+</header>
+
+<div class="hero">
+  <div class="wrap" id="hero"></div>
+</div>
+<div class="marquee"><div id="marq"></div></div>
+
+<main class="wrap">
+  <nav class="nums" id="nums"></nav>
+  <div id="secciones"></div>
+</main>
+
+<footer class="pie">
+  <div class="wrap" id="pie"></div>
+</footer>
+
+<script>
+const C = {rojo:'#e5384b',verde:'#3fae49',celeste:'#2f8fe0',morado:'#6c3fc4',naranja:'#f26b1d',rosa:'#e6457a',teal:'#159f8e',lima:'#5aa82f',amarillo:'#e0a800',lila:'#7a4fd6'};
+const SOFT = {rojo:'#fdecef',verde:'#eef8e6',celeste:'#e8f3fd',morado:'#f1ebfb',naranja:'#fff1e8',rosa:'#fdebf2',teal:'#e6f6f3',lima:'#eef7e6',amarillo:'#fff7dc',lila:'#f1ecfc'};
+
+const T = {
+es:{
+  dir:'ltr',inst:'INSTITUCIÓN EDUCATIVA',lugar:'Caucasia - Antioquia',reso:'Resolución 18922 de 2022; 9430 de 2024',
+  lema:'FE · ESPERANZA · AMOR',circ:'CIRCULAR RECTORAL',num:'N.º 06 DE 2026',fecha:'24 de septiembre de 2026',
+  t1:'Regulación del uso de teléfonos celulares',t2:'y dispositivos electrónicos en la escuela',
+  sub:'Por una convivencia sana, un mejor aprendizaje y el bienestar de nuestros estudiantes',
+  estado:'Medida piloto vigente durante el cuarto período académico de 2026',
+  marq:'Circular Rectoral N.º 06 de 2026 · Regulación del uso de teléfonos celulares y dispositivos electrónicos en la escuela · Sedes San José, Caracolí y Divino Niño · Por una convivencia sana, un mejor aprendizaje y el bienestar de nuestros estudiantes',
+  install:'Instalar',
+  s1:'¿Qué buscamos?',
+  s1l:['<b>Proteger la salud mental</b> y el bienestar de los estudiantes.','Mejorar el proceso de enseñanza y aprendizaje.','Fortalecer la convivencia escolar.','Prevenir riesgos asociados al uso inadecuado de la tecnología.','Promover un uso consciente, seguro y con sentido formativo.'],
+  s2:'¿A quiénes aplica?',
+  s2t:'A todos los estudiantes de la Institución Educativa Divino Niño',
+  s2s:['Sede San José','Sede Caracolí','Sede Divino Niño'],
+  s3:'¿En qué se basa?',
+  s3l:['Cumplimiento de la Circular K 2026090000166 del 30 de junio de 2026 (Secretaría de Educación de Antioquia).','Ley 115 de 1994 (autonomía escolar).','Ley 2170 de 2021 (uso adecuado de dispositivos móviles en entornos escolares).','Ley 1620 de 2013 y Decreto 1075 de 2015 (convivencia escolar).','Aplicación del debido proceso.','Medida aprobada por el Comité Escolar de Convivencia, Consejo Académico y Consejo Directivo.'],
+  s4:'¿Qué se permite y qué no?',
+  p1:'Preescolar a quinto (5.º)',
+  p1t:'No deben portar teléfonos celulares, tabletas u otros dispositivos electrónicos personales durante su permanencia en la institución.',
+  p1n:'Solicitamos a las familias abstenerse de enviar estos dispositivos con sus hijos e hijas.',
+  p2:'Básica secundaria y media (6.º a 11.º)',
+  p2t:'<b>No deben llevar el celular</b> al colegio, salvo en los casos permitidos.',
+  p2s:'<b>Solo se podrá usar cuando el docente</b> autorice su uso con intención pedagógica dentro de la clase.',
+  p2d:'Después de usarlo, debe apagarse y guardarse.',
+  q4:'¿En qué grado está su hijo o hija?',
+  grados:['Preescolar','1.º','2.º','3.º','4.º','5.º','6.º','7.º','8.º','9.º','10.º','11.º'],
+  rPri:'<b>Preescolar a quinto:</b> no debe portar celular, tableta ni otro dispositivo electrónico personal mientras esté en la institución. La familia debe abstenerse de enviarlo.',
+  rSec:'<b>Básica secundaria y media:</b> no debe llevar el celular al colegio, salvo en los casos permitidos (excepciones, punto 8). Solo puede usarlo cuando el docente lo autorice con intención pedagógica dentro de la clase; después debe apagarlo y guardarlo.',
+  rIni:'Toque un grado para ver la norma que le aplica.',
+  ruta:'La ruta paso a paso',
+  s5:'Durante las clases',
+  s5l:['El dispositivo debe permanecer sin uso.','Si se solicita, se entrega temporalmente al docente de manera voluntaria.','Se devuelve al finalizar la clase, con seguimiento de convivencia escolar.'],
+  s6:'Si hay uso indebido',
+  s6t:'Si se usa el celular sin autorización, el docente podrá retenerlo temporalmente y se procederá según el Manual de Convivencia, con seguimiento y citación a la familia.',
+  s7:'Reincidencia',
+  s7t:'Si el uso indebido se repite, el dispositivo será entregado <b>únicamente al padre, madre de familia</b> o acudiente, previa citación por parte de la institución.',
+  paso:'Paso',
+  s8:'Excepciones (cuando sí se puede llevar)',
+  s8l:['<b>Razones de salud</b> (seguimiento o necesidad médica justificada).','<b>Ajustes razonables, accesibilidad o necesidades específicas de apoyo.</b>','<b>Situaciones de emergencia.</b>','<b>Actividades pedagógicas autorizadas.</b>'],
+  s8n:'Las familias deben informar oportunamente a la institución y presentar los soportes necesarios. Cada caso será analizado de manera individual.',
+  q8:'¿Su caso es una excepción?',
+  q8o:['Salud','Apoyo o accesibilidad','Emergencia','Actividad pedagógica','Ninguna de estas'],
+  r8si:'Esta es una de las excepciones de la circular. Informe oportunamente a la institución y presente los soportes necesarios; el caso será analizado de manera individual.',
+  r8no:'No está entre las excepciones. Aplica la norma general: el estudiante no debe llevar el celular ni otros dispositivos electrónicos al colegio.',
+  r8ini:'Elija una opción.',
+  s9:'El rol de las familias es clave',
+  s9l:['Dialogar con sus hijos e hijas sobre estas disposiciones.','Establecer en casa acuerdos y límites razonables.','Evitar comunicarse directamente con los estudiantes durante las clases.','Usar los canales institucionales (grupo de WhatsApp, llamadas a rectoría, coordinación y/o docentes).','Acompañar la formación en ciudadanía digital y el uso responsable de la tecnología.'],
+  s9c:'Lista de compromiso de la familia',
+  s9p:n=>`${n} de 5 compromisos cumplidos`,
+  s10:'Carácter piloto, seguimiento y evaluación',
+  s10t:'La medida se aplicará durante el <b>cuarto período académico de 2026</b> y será evaluada para decidir su continuidad, modificación o terminación.',
+  s10e:['Continuidad','Modificación','Terminación'],
+  s11:'La circular original',
+  pie1:'Institución Educativa Divino Niño · Caucasia, Antioquia',
+  pie2:'Contenido tomado de la Circular Rectoral N.º 06 de 2026 del 24 de septiembre de 2026.',
+  pie3:'App informativa hecha por Vibras Positivas HM. Ante cualquier duda, comuníquese por los canales institucionales.',
+  share:'Compartir por WhatsApp',
+  shareTxt:'Circular Rectoral N.º 06 de 2026 de la I. E. Divino Niño: así queda el uso del celular en el colegio. '
+},
+en:{
+  dir:'ltr',inst:'EDUCATIONAL INSTITUTION',lugar:'Caucasia - Antioquia',reso:'Resolution 18922 of 2022; 9430 of 2024',
+  lema:'FAITH · HOPE · LOVE',circ:'PRINCIPAL\'S CIRCULAR',num:'No. 06 OF 2026',fecha:'September 24, 2026',
+  t1:'Rules for the use of mobile phones',t2:'and electronic devices at school',
+  sub:'For healthy coexistence, better learning and the well-being of our students',
+  estado:'Pilot measure in force during the fourth academic term of 2026',
+  marq:'Principal\'s Circular No. 06 of 2026 · Rules for the use of mobile phones and electronic devices at school · San José, Caracolí and Divino Niño campuses · For healthy coexistence, better learning and the well-being of our students',
+  install:'Install',
+  s1:'What are we aiming for?',
+  s1l:['<b>Protect the mental health</b> and well-being of students.','Improve the teaching and learning process.','Strengthen coexistence at school.','Prevent risks linked to inappropriate use of technology.','Promote mindful, safe and educational use.'],
+  s2:'Who does it apply to?',
+  s2t:'All students of the Divino Niño Educational Institution',
+  s2s:['San José campus','Caracolí campus','Divino Niño campus'],
+  s3:'What is it based on?',
+  s3l:['Compliance with Circular K 2026090000166 of June 30, 2026 (Antioquia Department of Education).','Law 115 of 1994 (school autonomy).','Law 2170 of 2021 (appropriate use of mobile devices in school settings).','Law 1620 of 2013 and Decree 1075 of 2015 (school coexistence).','Application of due process.','Measure approved by the School Coexistence Committee, the Academic Council and the Board of Directors.'],
+  s4:'What is allowed and what is not?',
+  p1:'Preschool to fifth grade',
+  p1t:'They must not carry mobile phones, tablets or other personal electronic devices while at the school.',
+  p1n:'We ask families not to send these devices with their sons and daughters.',
+  p2:'Lower and upper secondary (6th to 11th)',
+  p2t:'<b>They must not bring their phone</b> to school, except in the permitted cases.',
+  p2s:'<b>It may only be used when the teacher</b> authorizes it for an educational purpose during class.',
+  p2d:'After use, it must be switched off and put away.',
+  q4:'What grade is your child in?',
+  grados:['Preschool','1st','2nd','3rd','4th','5th','6th','7th','8th','9th','10th','11th'],
+  rPri:'<b>Preschool to fifth grade:</b> must not carry a phone, tablet or any other personal electronic device while at school. Families should not send them.',
+  rSec:'<b>Lower and upper secondary:</b> must not bring the phone to school, except in the permitted cases (exceptions, item 8). It may only be used when the teacher authorizes it for an educational purpose during class; afterwards it must be switched off and put away.',
+  rIni:'Tap a grade to see the rule that applies.',
+  ruta:'Step-by-step process',
+  s5:'During class',
+  s5l:['The device must remain unused.','If requested, it is voluntarily handed to the teacher temporarily.','It is returned at the end of class, with school-coexistence follow-up.'],
+  s6:'If it is misused',
+  s6t:'If the phone is used without permission, the teacher may hold it temporarily and the Coexistence Handbook will be applied, with follow-up and a meeting with the family.',
+  s7:'Repeat offenses',
+  s7t:'If the misuse happens again, the device will be handed <b>only to the father, mother</b> or guardian, after being summoned by the school.',
+  paso:'Step',
+  s8:'Exceptions (when it can be brought)',
+  s8l:['<b>Health reasons</b> (justified medical monitoring or need).','<b>Reasonable adjustments, accessibility or specific support needs.</b>','<b>Emergency situations.</b>','<b>Authorized educational activities.</b>'],
+  s8n:'Families must inform the school in a timely manner and submit the necessary supporting documents. Each case will be reviewed individually.',
+  q8:'Is your case an exception?',
+  q8o:['Health','Support or accessibility','Emergency','Educational activity','None of these'],
+  r8si:'This is one of the exceptions in the circular. Inform the school in a timely manner and submit the supporting documents; the case will be reviewed individually.',
+  r8no:'This is not one of the exceptions. The general rule applies: the student must not bring a phone or other electronic devices to school.',
+  r8ini:'Choose an option.',
+  s9:'The role of families is key',
+  s9l:['Talk with your sons and daughters about these rules.','Set reasonable agreements and limits at home.','Avoid contacting students directly during class.','Use the school\'s official channels (WhatsApp group, calls to the principal\'s office, coordination and/or teachers).','Support education in digital citizenship and responsible use of technology.'],
+  s9c:'Family commitment checklist',
+  s9p:n=>`${n} of 5 commitments completed`,
+  s10:'Pilot, follow-up and evaluation',
+  s10t:'The measure will be applied during the <b>fourth academic term of 2026</b> and will be evaluated to decide whether it continues, is modified or ends.',
+  s10e:['Continue','Modify','End'],
+  s11:'The original circular',
+  pie1:'Divino Niño Educational Institution · Caucasia, Antioquia',
+  pie2:'Content taken from Principal\'s Circular No. 06 of 2026, dated September 24, 2026. The official version is the Spanish one.',
+  pie3:'Informational app made by Vibras Positivas HM. For any questions, use the school\'s official channels.',
+  share:'Share on WhatsApp',
+  shareTxt:'Divino Niño School Circular No. 06 of 2026: the new rules for phones at school. '
+}};
+
+let L = 'es';
+try{ L = localStorage.getItem('dn-lang') || 'es'; }catch(e){}
+let compromisos = [];
+try{ compromisos = JSON.parse(localStorage.getItem('dn-comp')||'[]'); }catch(e){}
+
+const colores = ['rojo','verde','celeste','morado','naranja','rosa','teal','lima','amarillo','lila'];
+
+function blk(n,color,titulo,html){
+  return `<section class="blk" id="s${n}" style="--c:${C[color]};--soft:${SOFT[color]}">
+    <div class="cab" style="background:${C[color]}"><div class="n" style="color:${C[color]}">${n}</div><h3>${titulo}</h3></div>
+    <div class="cuerpo">${html}</div></section>`;
+}
+const li = (a,cls='lista') => `<ul class="${cls}">${a.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+
+function render(){
+  const t = T[L];
+  document.documentElement.lang = L;
+  document.getElementById('lang').textContent = L==='es' ? 'EN' : 'ES';
+  document.getElementById('install').textContent = t.install;
+  document.getElementById('tCirc').textContent = t.circ+' '+t.num;
+
+  document.getElementById('hero').innerHTML = `
+    <div class="inst">${t.inst}</div>
+    <h1>DIVINO NIÑO</h1>
+    <div class="lugar">${t.lugar}</div>
+    <div class="reso">${t.reso}</div>
+    <div class="lema">${t.lema}</div>
+    <div class="circ"><b>${t.circ}</b><span>${t.num}</span><b style="font-size:1rem">${t.fecha}</b></div>
+    <div class="titulo"><h2>${t.t1}<em>${t.t2}</em></h2><p>${t.sub}</p></div>
+    <div class="estado"><i class="pulso"></i>${t.estado}</div>`;
+  document.getElementById('marq').textContent = t.marq;
+
+  document.getElementById('nums').innerHTML = colores.map((c,i)=>`<a href="#s${i+1}" style="background:${C[c]}">${i+1}</a>`).join('');
+
+  const gradosBtns = t.grados.map((g,i)=>`<button class="chip" data-g="${i}">${g}</button>`).join('');
+  const excBtns = t.q8o.map((o,i)=>`<button class="chip" data-e="${i}">${o}</button>`).join('');
+  const checks = t.s9l.map((x,i)=>`<label class="check ${compromisos.includes(i)?'ok':''}"><input type="checkbox" data-c="${i}" ${compromisos.includes(i)?'checked':''}><span>${x}</span></label>`).join('');
+
+  let h = '';
+  h += blk(1,'rojo',t.s1, li(t.s1l));
+  h += blk(2,'verde',t.s2, `<p class="grande">${t.s2t}</p><div class="sedes">${t.s2s.map(s=>`<span>${s}</span>`).join('')}</div>`);
+  h += blk(3,'celeste',t.s3, li(t.s3l,'lista leyes'));
+  h += blk(4,'morado',t.s4, `
+    <div class="dos">
+      <div class="panel" style="--c:${C.rojo};--soft:${SOFT.rojo}"><h4>${t.p1}</h4><p class="grande">${t.p1t}</p><div class="nota">${t.p1n}</div></div>
+      <div class="panel" style="--c:${C.celeste};--soft:${SOFT.celeste}"><h4>${t.p2}</h4><p class="grande">${t.p2t}</p><div class="si">${t.p2s}<br>${t.p2d}</div></div>
+    </div>
+    <div class="tool"><h4>${t.q4}</h4><div class="chips" id="grados">${gradosBtns}</div><div class="resp" id="rGrado">${t.rIni}</div></div>`);
+  h += `<h3 class="baloo" style="font-size:1.4rem;margin:30px 4px 0;color:var(--azul)">${t.ruta}</h3>`;
+  h += `<div class="ruta" style="margin-top:12px">
+    <div class="paso blk" id="s5" style="background:${C.naranja}"><div class="k">${t.paso} 1 · 5</div><h4>${t.s5}</h4><ul>${t.s5l.map(x=>`<li>${x}</li>`).join('')}</ul><div class="bg">5</div></div>
+    <div class="paso blk" id="s6" style="background:${C.rosa}"><div class="k">${t.paso} 2 · 6</div><h4>${t.s6}</h4><p>${t.s6t}</p><div class="bg">6</div></div>
+    <div class="paso blk" id="s7" style="background:${C.teal}"><div class="k">${t.paso} 3 · 7</div><h4>${t.s7}</h4><p>${t.s7t}</p><div class="bg">7</div></div>
+  </div>`;
+  h += blk(8,'lima',t.s8, `<ol class="lista leyes">${t.s8l.map(x=>`<li>${x}</li>`).join('')}</ol><div class="nota">${t.s8n}</div>
+    <div class="tool"><h4>${t.q8}</h4><div class="chips" id="exc">${excBtns}</div><div class="resp" id="rExc">${t.r8ini}</div></div>`);
+  h += blk(9,'amarillo',t.s9, `<p style="font-weight:800;margin-bottom:6px">${t.s9c}</p>
+    <div class="barra"><i id="barra"></i></div><p id="pComp" style="font-weight:700;color:var(--tx2);margin-bottom:12px"></p>
+    <div style="display:grid;gap:10px">${checks}</div>`);
+  h += blk(10,'lila',t.s10, `<p class="grande">${t.s10t}</p><div class="sedes">${t.s10e.map(s=>`<span>${s}</span>`).join('')}</div>`);
+  h += `<section class="blk foto" id="original" style="padding:16px;background:transparent;box-shadow:none" hidden>
+    <h3 class="baloo" style="font-size:1.4rem;color:var(--azul);margin-bottom:10px">${t.s11}</h3>
+    <img src="circular.jpg" alt="${t.circ} ${t.num}" loading="lazy" onerror="this.closest('section').remove()" onload="this.closest('section').hidden=false"></section>`;
+  document.getElementById('secciones').innerHTML = h;
+
+  const url = location.href.split('#')[0];
+  document.getElementById('pie').innerHTML = `<h3 class="baloo" style="font-size:1.3rem">${t.pie1}</h3>
+    <p>${t.pie2}</p><p>${t.pie3}</p>
+    <a class="compartir" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(t.shareTxt+url)}">${t.share}</a>`;
+
+  // Interacciones
+  document.querySelectorAll('#grados .chip').forEach(b=>b.onclick=()=>{
+    document.querySelectorAll('#grados .chip').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+    const r = document.getElementById('rGrado'); r.innerHTML = (+b.dataset.g <= 5 ? t.rPri : t.rSec);
+    r.style.animation='none'; r.offsetHeight; r.style.animation='';
+  });
+  document.querySelectorAll('#exc .chip').forEach(b=>b.onclick=()=>{
+    document.querySelectorAll('#exc .chip').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+    const r = document.getElementById('rExc'); r.innerHTML = (+b.dataset.e < 4 ? t.r8si : t.r8no);
+    r.style.animation='none'; r.offsetHeight; r.style.animation='';
+  });
+  document.querySelectorAll('[data-c]').forEach(c=>c.onchange=()=>{
+    const i=+c.dataset.c;
+    compromisos = c.checked ? [...new Set([...compromisos,i])] : compromisos.filter(x=>x!==i);
+    c.closest('label').classList.toggle('ok',c.checked);
+    try{ localStorage.setItem('dn-comp',JSON.stringify(compromisos)); }catch(e){}
+    progreso();
+  });
+  progreso();
+  observar();
+}
+function progreso(){
+  document.getElementById('barra').style.width = (compromisos.length/5*100)+'%';
+  document.getElementById('pComp').textContent = T[L].s9p(compromisos.length);
+}
+function observar(){
+  const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('ver'); io.unobserve(e.target);} }),{threshold:.12});
+  document.querySelectorAll('.blk').forEach(b=>io.observe(b));
+}
+document.getElementById('lang').onclick=()=>{
+  L = L==='es'?'en':'es';
+  try{ localStorage.setItem('dn-lang',L); }catch(e){}
+  render();
+};
+addEventListener('scroll',()=>{
+  const h = document.documentElement;
+  document.getElementById('progress').style.width = (h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+},{passive:true});
+
+// Instalación como app
+let aviso;
+addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); aviso=e; document.getElementById('install').hidden=false; });
+document.getElementById('install').onclick=async()=>{ if(!aviso) return; aviso.prompt(); await aviso.userChoice; aviso=null; document.getElementById('install').hidden=true; };
+if('serviceWorker' in navigator){ addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{})); }
+
+render();
+</script>
+</body>
+</html>
