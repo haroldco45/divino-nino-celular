@@ -35,6 +35,13 @@ a{color:inherit}
 .btn.alt{background:var(--amarillo)}
 #progress{position:absolute;left:0;bottom:0;height:3px;background:var(--amarillo);width:0}
 
+.marca{display:flex;align-items:center;gap:10px;min-width:0}
+.mini{width:40px;height:40px;border-radius:50%;background:#fff;object-fit:contain;padding:2px;flex-shrink:0}
+.cabeza{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.escudo{width:150px;height:150px;border-radius:50%;background:#fff;padding:8px;object-fit:contain;flex-shrink:0;
+  box-shadow:0 0 0 6px rgba(255,210,63,.55),0 14px 34px rgba(0,0,0,.3);animation:latir 4s ease-in-out infinite}
+@keyframes latir{50%{transform:scale(1.04);box-shadow:0 0 0 12px rgba(255,210,63,.25),0 14px 34px rgba(0,0,0,.3)}}
+@media(max-width:560px){.escudo{width:112px;height:112px}}
 /* Hero */
 .hero{position:relative;color:#fff;overflow:hidden;padding:46px 0 70px;
   background:linear-gradient(120deg,#0c2d7a,#1747b8,#6c3fc4,#e6457a,#0c2d7a);background-size:400% 400%;animation:mover 18s ease infinite}
@@ -127,7 +134,7 @@ section.blk.ver{opacity:1;transform:none}
 
 <header class="top">
   <div class="wrap">
-    <div class="brand">I. E. Divino Niño<small id="tCirc">Circular Rectoral N.º 06 de 2026</small></div>
+    <div class="marca"><img src="logo.png" alt="Escudo I. E. Divino Niño" class="mini"><div class="brand">I. E. Divino Niño<small id="tCirc">Circular Rectoral N.º 06 de 2026</small></div></div>
     <div class="btns">
       <button class="btn alt" id="lang" aria-label="Cambiar idioma">EN</button>
       <button class="btn" id="install" hidden>Instalar</button>
@@ -294,11 +301,16 @@ function render(){
   document.getElementById('tCirc').textContent = t.circ+' '+t.num;
 
   document.getElementById('hero').innerHTML = `
-    <div class="inst">${t.inst}</div>
-    <h1>DIVINO NIÑO</h1>
-    <div class="lugar">${t.lugar}</div>
-    <div class="reso">${t.reso}</div>
-    <div class="lema">${t.lema}</div>
+    <div class="cabeza">
+      <img src="logo.png" alt="Escudo I. E. Divino Niño" class="escudo">
+      <div>
+        <div class="inst">${t.inst}</div>
+        <h1>DIVINO NIÑO</h1>
+        <div class="lugar">${t.lugar}</div>
+        <div class="reso">${t.reso}</div>
+        <div class="lema">${t.lema}</div>
+      </div>
+    </div>
     <div class="circ"><b>${t.circ}</b><span>${t.num}</span><b style="font-size:1rem">${t.fecha}</b></div>
     <div class="titulo"><h2>${t.t1}<em>${t.t2}</em></h2><p>${t.sub}</p></div>
     <div class="estado"><i class="pulso"></i>${t.estado}</div>`;
